@@ -1,0 +1,10 @@
+[
+  { "name": "ticker_id", "field_type": "STRING", "mode": "REQUIRED" },
+  { "name": "date", "field_type": "DATE", "mode": "REQUIRED" },
+  { "name": "open_price", "field_type": "FLOAT", "mode": "NULLABLE" },
+  { "name": "high_price", "field_type": "FLOAT", "mode": "NULLABLE" },
+  { "name": "low_price", "field_type": "FLOAT", "mode": "NULLABLE" },
+  { "name": "close_price", "field_type": "FLOAT", "mode": "NULLABLE" },
+  { "name": "volume", "field_type": "FLOAT", "mode": "NULLABLE" },
+  { "name": "created_at", "field_type": "TIMESTAMP", "mode": "NULLABLE" }
+]

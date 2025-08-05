@@ -1,0 +1,4 @@
+[
+  { "name": "sector_id", "field_type": "STRING", "mode": "REQUIRED" },
+  { "name": "sector_name", "field_type": "STRING", "mode": "REQUIRED" }
+]

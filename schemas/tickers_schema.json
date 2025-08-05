@@ -1,0 +1,6 @@
+[
+  { "name": "ticker_id", "field_type": "STRING", "mode": "REQUIRED" },
+  { "name": "company_name", "field_type": "STRING", "mode": "NULLABLE" },
+  { "name": "sector_id", "field_type": "STRING", "mode": "NULLABLE" },
+  { "name": "currency_id", "field_type": "STRING", "mode": "NULLABLE" }
+]

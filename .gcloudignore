@@ -1,0 +1,7 @@
+.env                # 機密情報（DB接続・Webhookなど）
+test.py             # ローカル専用テスト（本番に不要）
+*.json              # GCP認証キーなどを含む可能性 → 万全の予防
+logs/               # ローカルログ
+.idea/              # IDE設定（個人環境依存）
+__pycache__/        # Pythonキャッシュ
+yfinance-project2-7981d342307c.json

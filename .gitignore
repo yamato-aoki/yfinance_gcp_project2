@@ -1,0 +1,7 @@
+.env
+test.py
+*.json
+logs/
+.idea/
+__pycache__/
+yfinance-project2-7981d342307c.json

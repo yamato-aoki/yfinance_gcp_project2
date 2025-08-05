@@ -1,0 +1,43 @@
+{"ticker_id": "9432.T", "company_name": "NTT", "sector_id": "Communication Services", "currency_id": "JPY"}
+{"ticker_id": "9433.T", "company_name": "KDDI Corporation", "sector_id": "Communication Services", "currency_id": "JPY"}
+{"ticker_id": "4661.T", "company_name": "Oriental Land Co., Ltd.", "sector_id": "Consumer Cyclical", "currency_id": "JPY"}
+{"ticker_id": "2914.T", "company_name": "Japan Tobacco Inc.", "sector_id": "Consumer Defensive", "currency_id": "JPY"}
+{"ticker_id": "7203.T", "company_name": "Toyota Motor Corporation", "sector_id": "Consumer Cyclical", "currency_id": "JPY"}
+{"ticker_id": "8306.T", "company_name": "Mitsubishi UFJ Financial Group", "sector_id": "Financial Services", "currency_id": "JPY"}
+{"ticker_id": "4502.T", "company_name": "Takeda Pharmaceutical Co Ltd", "sector_id": "Healthcare", "currency_id": "JPY"}
+{"ticker_id": "6758.T", "company_name": "Sony Group Corporation", "sector_id": "Technology", "currency_id": "JPY"}
+{"ticker_id": "8035.T", "company_name": "Tokyo Electron Ltd.", "sector_id": "Technology", "currency_id": "JPY"}
+{"ticker_id": "9984.T", "company_name": "SoftBank Group Corp.", "sector_id": "Communication Services", "currency_id": "JPY"}
+{"ticker_id": "AAPL", "company_name": "Apple Inc.", "sector_id": "Technology", "currency_id": "USD"}
+{"ticker_id": "GOOGL", "company_name": "Alphabet Inc.", "sector_id": "Communication Services", "currency_id": "USD"}
+{"ticker_id": "MSFT", "company_name": "Microsoft Corporation", "sector_id": "Technology", "currency_id": "USD"}
+{"ticker_id": "NVDA", "company_name": "NVIDIA Corporation", "sector_id": "Technology", "currency_id": "USD"}
+{"ticker_id": "AMZN", "company_name": "Amazon.com, Inc.", "sector_id": "Consumer Cyclical", "currency_id": "USD"}
+{"ticker_id": "META", "company_name": "Meta Platforms, Inc.", "sector_id": "Communication Services", "currency_id": "USD"}
+{"ticker_id": "TSLA", "company_name": "Tesla, Inc.", "sector_id": "Consumer Cyclical", "currency_id": "USD"}
+{"ticker_id": "DIS", "company_name": "The Walt Disney Company", "sector_id": "Communication Services", "currency_id": "USD"}
+{"ticker_id": "KO", "company_name": "The Coca-Cola Company", "sector_id": "Consumer Defensive", "currency_id": "USD"}
+{"ticker_id": "PFE", "company_name": "Pfizer Inc.", "sector_id": "Healthcare", "currency_id": "USD"}
+{"ticker_id": "JPM", "company_name": "JPMorgan Chase & Co.", "sector_id": "Financial Services", "currency_id": "USD"}
+{"ticker_id": "BRK-B", "company_name": "Berkshire Hathaway Inc.", "sector_id": "Financial Services", "currency_id": "USD"}
+{"ticker_id": "V", "company_name": "Visa Inc.", "sector_id": "Financial Services", "currency_id": "USD"}
+{"ticker_id": "WMT", "company_name": "Walmart Inc.", "sector_id": "Consumer Defensive", "currency_id": "USD"}
+{"ticker_id": "XOM", "company_name": "Exxon Mobil Corporation", "sector_id": "Energy", "currency_id": "USD"}
+{"ticker_id": "PEP", "company_name": "PepsiCo, Inc.", "sector_id": "Consumer Defensive", "currency_id": "USD"}
+{"ticker_id": "MRK", "company_name": "Merck & Co., Inc.", "sector_id": "Healthcare", "currency_id": "USD"}
+{"ticker_id": "INTC", "company_name": "Intel Corporation", "sector_id": "Technology", "currency_id": "USD"}
+{"ticker_id": "BABA", "company_name": "Alibaba Group Holding Limited", "sector_id": "Consumer Cyclical", "currency_id": "USD"}
+{"ticker_id": "TCEHY", "company_name": "Tencent Holdings Ltd.", "sector_id": "Communication Services", "currency_id": "USD"}
+{"ticker_id": "JD", "company_name": "JD.com, Inc.", "sector_id": "Consumer Cyclical", "currency_id": "USD"}
+{"ticker_id": "2318.HK", "company_name": "Ping An Insurance", "sector_id": "Financial Services", "currency_id": "HKD"}
+{"ticker_id": "005930.KS", "company_name": "Samsung Electronics Co., Ltd.", "sector_id": "Technology", "currency_id": "KRW"}
+{"ticker_id": "TSM", "company_name": "Taiwan Semiconductor Manufacturing Company", "sector_id": "Technology", "currency_id": "USD"}
+{"ticker_id": "AZN", "company_name": "AstraZeneca PLC", "sector_id": "Healthcare", "currency_id": "USD"}
+{"ticker_id": "HSBC", "company_name": "HSBC Holdings plc", "sector_id": "Financial Services", "currency_id": "USD"}
+{"ticker_id": "SAP", "company_name": "SAP SE", "sector_id": "Technology", "currency_id": "USD"}
+{"ticker_id": "BAYN.DE", "company_name": "Bayer AG", "sector_id": "Healthcare", "currency_id": "EUR"}
+{"ticker_id": "OR.PA", "company_name": "L'Oréal S.A.", "sector_id": "Consumer Defensive", "currency_id": "EUR"}
+{"ticker_id": "MC.PA", "company_name": "LVMH Moët Hennessy Louis Vuitton", "sector_id": "Consumer Cyclical", "currency_id": "EUR"}
+{"ticker_id": "SHOP", "company_name": "Shopify Inc.", "sector_id": "Technology", "currency_id": "USD"}
+{"ticker_id": "INFY", "company_name": "Infosys Limited", "sector_id": "Technology", "currency_id": "USD"}
+{"ticker_id": "BHP", "company_name": "BHP Group Limited", "sector_id": "Basic Materials", "currency_id": "USD"}
