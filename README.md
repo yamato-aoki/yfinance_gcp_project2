@@ -112,15 +112,21 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 
 主要モジュールに対して、`pytest` + `mock` による単体テストを実施しています。
 
-| テスト対象                         | 内容                        |
-| ----------------------------- | ------------------------- |
-| fetch\_stock\_prices          | APIからの取得データが構造的に正しいかを確認   |
-| format\_stock\_prices         | 整形後データの構造・データ型の検証         |
-| save\_json\_to\_gcs           | GCSアップロードの呼び出しをmockで確認    |
-| pipeline（run\_extract）        | ETLステップ呼び出しが想定通り行われているか   |
-| pipeline（run\_extract\_range） | 日付ループ処理が適切に機能するか（回数などを検証） |
+| テスト対象モジュール                   | 主な検証内容 |
+|----------------------------------|-------------------------------|
+| `fetch_stock_prices`             | APIから取得したデータ構造・件数・例外処理の検証 |
+| `format_stock_prices`            | 整形処理後のデータ構造・型・日付変換の確認     |
+| `save_json_to_gcs`               | GCSアップロード処理の呼び出し確認（mock使用） |
+| `load_to_bigquery`               | 一時テーブルへのロード／MERGE処理の確認       |
+| `transform_to_analytics_table`   | JOIN後の非正規化データの構造・指標計算の確認 |
+| `notifier`                       | Slack通知の送信成功／失敗パターンの検証       |
+| `logger`                         | Cloud Logging／GCSログ出力のmock検証         |
+| `pipeline (run_extract)`         | ETLステップが想定通り呼び出されるかの確認     |
+| `pipeline (run_extract_range)`   | 日付ループ処理の呼び出し回数や連携確認       |
+| `main.py`（Cloud Functions起点） | リクエスト入力に応じた分岐処理・異常時ログ確認（mock）|
 
-> `main.py`（Cloud Functionsエントリ）は本番環境での実行を想定。単体テスト対象外。
+> ※ `main.py` を含め、Cloud SDK や外部API／GCS／BigQuery などへの依存処理はすべて mock によってテスト対象とし、ローカル環境で完結できる形で検証しています。
+
 
 ---
 
