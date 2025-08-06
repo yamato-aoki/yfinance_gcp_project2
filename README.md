@@ -125,9 +125,9 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 
 ## 成果物の活用（プレゼン資料）
 
-- `【2025年7月】青木大和ポートフォリオ.pptx` にて構成・可視化・工夫点を説明
-- 企業面談や自己紹介時にプロジェクト構成を整理して共有可能
-- Looker Studioによる可視化例も提示予定
+本プロジェクトの背景・構成・工夫点・可視化結果などをまとめたプレゼン資料を以下に掲載しています。
+🔗 [【2025年7月】青木大和ポートフォリオ（スライド資料）](https://drive.google.com/your-slide-link)
+※Looker Studioによる可視化例も含まれています。
 
 ---
 
@@ -136,8 +136,6 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 - 名前：青木 大和（Yamato Aoki）
 - 志望職種：データエンジニア
 - 得意領域：データ基盤構築 / ETL / 可視化 / GCP活用 / 再現性ある設計
-- 今後挑戦したい技術：Airflow / Docker / CI/CD による拡張性強化
-
 ---
 
 ## 注意事項
