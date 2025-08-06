@@ -10,15 +10,15 @@ Cloud Functions / BigQuery / Cloud Storage / Scheduler を用いた自動ETL構�
 
 ## 使用技術
 
-| 項目               | 技術・サービス                          |
-|--------------------|-------------------------------------------|
-| データ取得         | Python, yfinance                          |
-| ETL処理            | Cloud Functions（Gen2）                   |
-| スケジューリング   | Cloud Scheduler                           |
-| データ保存         | Cloud Storage（.ndjson） + BigQuery       |
-| 通知               | Slack Webhook                             |
-| ログ管理           | Cloud Logging + Cloud Storage             |
-| 可視化             | Looker Studio（BigQuery上の非正規化テーブル） |
+| 項目       | 技術・サービス                           |
+| -------- | --------------------------------- |
+| データ取得    | Python, yfinance                  |
+| ETL処理    | Cloud Functions（Gen2）             |
+| スケジューリング | Cloud Scheduler                   |
+| データ保存    | Cloud Storage（.ndjson） + BigQuery |
+| 通知       | Slack Webhook                     |
+| ログ管理     | Cloud Logging + Cloud Storage     |
+| 可視化      | Looker Studio（BigQuery上の非正規化テーブル） |
 
 ---
 
@@ -47,17 +47,19 @@ yfinance_gcp_project2/
 
 ---
 
-## 実行方法
+## 実行方法（GCP環境向け）
 
-### 1. 仮想環境の作成（任意）
+このプロジェクトは GCP 上での運用を前提とした構成です。以下は、Cloud Functions などを使って再現・動作確認を行う流れです。
+
+### 1. 仮想環境の作成（任意・ローカル検証用途）
 
 ```bash
 python -m venv venv
-source venv/bin/activate     # Windowsなら venv\Scripts\activate
+source venv/bin/activate  # Windowsなら venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. `.env` ファイルを作成
+### 2. `.env` ファイルを作成（ローカル実行時のみ）
 
 以下の環境変数を設定します：
 
@@ -69,7 +71,7 @@ SLACK_WEBHOOK_URL=https://hooks.slack.com/services/XXXXX
 
 ### 3. 実行（Cloud Functions ローカル or デプロイ）
 
-#### （A）Cloud Functions ローカル実行（推奨）
+#### Cloud Functions ローカル実行（推奨）
 
 ```bash
 functions-framework --target=etl_dispatcher
@@ -80,6 +82,8 @@ functions-framework --target=etl_dispatcher
 ```bash
 curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mode": "etl"}'
 ```
+
+> ※再現には GCP リソース（Cloud Storage バケットや BigQuery テーブル）が事前に作成・権限設定されている必要があります。
 
 ---
 
@@ -99,13 +103,13 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 
 主要モジュールに対して、`pytest` + `mock` による単体テストを実施しています。
 
-| テスト対象                    | 内容                                                |
-|------------------------------|-----------------------------------------------------|
-| fetch_stock_prices           | APIからの取得データが構造的に正しいかを確認         |
-| format_stock_prices          | 整形後データの構造・データ型の検証                  |
-| save_json_to_gcs             | GCSアップロードの呼び出しをmockで確認              |
-| pipeline（run_extract）      | ETLステップ呼び出しが想定通り行われているか         |
-| pipeline（run_extract_range）| 日付ループ処理が適切に機能するか（回数などを検証） |
+| テスト対象                         | 内容                        |
+| ----------------------------- | ------------------------- |
+| fetch\_stock\_prices          | APIからの取得データが構造的に正しいかを確認   |
+| format\_stock\_prices         | 整形後データの構造・データ型の検証         |
+| save\_json\_to\_gcs           | GCSアップロードの呼び出しをmockで確認    |
+| pipeline（run\_extract）        | ETLステップ呼び出しが想定通り行われているか   |
+| pipeline（run\_extract\_range） | 日付ループ処理が適切に機能するか（回数などを検証） |
 
 > `main.py`（Cloud Functionsエントリ）は本番環境での実行を想定。単体テスト対象外。
 
@@ -113,11 +117,11 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 
 ## ログ設計と通知
 
-| 出力先         | 目的              | 備考                                     |
-|----------------|-------------------|------------------------------------------|
-| Slack通知       | 成功/失敗の即時通知 | 成功/失敗ステータス + 概要メッセージを表示 |
-| GCSログ         | 処理記録の保存     | 日付単位でJSONファイルをアーカイブ         |
-| Cloud Logging   | 詳細なステップログ | functions-framework や GCP上で自動出力     |
+| 出力先           | 目的         | 備考                              |
+| ------------- | ---------- | ------------------------------- |
+| Slack通知       | 成功/失敗の即時通知 | 成功/失敗ステータス + 概要メッセージを表示         |
+| GCSログ         | 処理記録の保存    | 日付単位でJSONファイルをアーカイブ             |
+| Cloud Logging | 詳細なステップログ  | functions-framework や GCP上で自動出力 |
 
 > 粒度と用途を分離して、運用面での可観測性と調査性を確保。ローカルログ出力は現在は未使用です。
 
@@ -127,8 +131,7 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 
 本プロジェクトの背景・構成・工夫点・可視化結果などをまとめたプレゼン資料を以下に掲載しています。
 
-🔗 [【2025年8月】青木大和ポートフォリオ（スライド資料）](https://bit.ly/3UbUZpL)
-※Looker Studioによる可視化例も含まれています。
+🔗 [【2025年8月】青木大和ポートフォリオ（スライド資料）](https://bit.ly/3UbUZpL) ※Looker Studioによる可視化例も含まれています。
 
 ---
 
@@ -137,8 +140,10 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 - 名前：青木 大和（Yamato Aoki）
 - 志望職種：データエンジニア
 - 得意領域：データ基盤構築 / ETL / 可視化 / GCP活用 / 再現性ある設計
+
 ---
 
 ## 注意事項
 
 このリポジトリは学習・ポートフォリオ提出目的で作成されたものであり、商用利用・再配布はご遠慮ください。
+
