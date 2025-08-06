@@ -12,7 +12,7 @@ Cloud Functions / BigQuery / Cloud Storage / Scheduler を用いた自動ETL構�
 
 本プロジェクトの全体像・構成・可視化例をわかりやすくまとめたプレゼン資料です。
 
-🔗 [【2025年8月】青木大和ポートフォリオ（スライド資料）](https://drive.google.com/file/d/1L99E64LngO7qMrIsZxDR7_KjWF_rY-bi/view?usp=sharing) 
+🔗 [【2025年8月】青木大和ポートフォリオ（スライド資料）](https://drive.google.com/file/d/1L99E64LngO7qMrIsZxDR7_KjWF_rY-bi/view) 
 ※Looker Studioによる可視化例も含まれています。
 
 ---
