@@ -59,7 +59,7 @@ pip install -r requirements.txt
 
 ### 2. `.env` ファイルを作成
 
-以下の環境変数を設定します（Cloud Functions側では Secret Manager などに置き換え可）：
+以下の環境変数を設定します：
 
 ```
 GCS_BUCKET_NAME=your-bucket-name
