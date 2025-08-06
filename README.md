@@ -126,7 +126,7 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 ## 成果物の活用（プレゼン資料）
 
 本プロジェクトの背景・構成・工夫点・可視化結果などをまとめたプレゼン資料を以下に掲載しています。
-🔗 [【2025年7月】青木大和ポートフォリオ（スライド資料）](https://drive.google.com/your-slide-link)
+🔗 [【2025年7月】青木大和ポートフォリオ（スライド資料）](https://bit.ly/3UbUZpL)
 ※Looker Studioによる可視化例も含まれています。
 
 ---
