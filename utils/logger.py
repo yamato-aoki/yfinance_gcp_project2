@@ -64,8 +64,8 @@ def log_to_gcs(payload: dict, bucket_name: str) -> None:
     """
     JSONログを GCS（Cloud Storage）に保存する。
 
-    保存先は `logs/YYYY-MM-DD_HHMMSS_status.json` の形式で命名される。
-    例: logs/2025-08-06_101530_success.json
+    保存先は `logs/YYYY/MM/DD/HHMMSS_status.json` の形式で命名される。
+    例: logs/2025/08/06/101530_success.json
 
     Args:
         payload (dict): ログ内容。statusキー（success, errorなど）によってファイル名が分岐
@@ -74,9 +74,11 @@ def log_to_gcs(payload: dict, bucket_name: str) -> None:
     Returns:
         None
     """
-    timestamp = datetime.utcnow().strftime("%Y-%m-%d_%H%M%S")
+    now = datetime.utcnow()
+    date_path = now.strftime("%Y/%m/%d")
+    time_str = now.strftime("%H%M%S")
     status = payload.get("status", "log")
-    filename = f"logs/{timestamp}_{status}.json"
+    filename = f"logs/{date_path}/{time_str}_{status}.json"
 
     try:
         client = storage.Client()

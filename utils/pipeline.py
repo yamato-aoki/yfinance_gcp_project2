@@ -85,7 +85,7 @@ def run_extract_pipeline(tickers: List[str]) -> None:
         transform_to_analytics_table()
 
         handle_etl_success(
-            mode, timestamp, f"ETL処理（mode: {mode}）が正常に完了しました。"
+            mode, timestamp, f"ETL process (mode: {mode}) completed successfully."
         )
     except Exception as e:
         handle_etl_error(mode, timestamp, e)
@@ -142,7 +142,7 @@ def run_extract_range_pipeline(
         handle_etl_success(
             mode,
             timestamp,
-            f"{len(grouped_results)}日分のETL処理が正常に完了しました。",
+            f"ETL process for {len(grouped_results)} day(s) completed successfully."
         )
     except Exception as e:
         handle_etl_error(mode, timestamp, e)
@@ -198,20 +198,17 @@ def handle_etl_success(mode: str, timestamp: str, message: str) -> None:
 
 def handle_etl_error(mode: str, timestamp: str, error: Exception) -> None:
     """
-    失敗時のSlack通知＋GCSログ保存処理。
-
-    Args:
-        mode (str): 処理モード
-        timestamp (str): 実行時刻
-        error (Exception): 発生した例外
+    失敗時のSlack通知とGCSログ保存処理。
     """
     error_payload = {
         "status": "error",
         "mode": mode,
         "timestamp": timestamp,
+        "message": f"ETL process (mode: {mode}) failed with error.",
         "error_message": str(error),
         "traceback": traceback.format_exc(),
     }
     log_to_gcs(error_payload, BUCKET_NAME)
     notify_slack(format_slack_message(error_payload), success=False)
     raise error
+
