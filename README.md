@@ -8,6 +8,15 @@ Cloud Functions / BigQuery / Cloud Storage / Scheduler を用いた自動ETL構�
 
 ---
 
+## プロジェクト全体の解説資料（スライド形式）
+
+本プロジェクトの全体像・構成・可視化例をわかりやすくまとめたプレゼン資料です。
+
+🔗 [【2025年8月】青木大和ポートフォリオ（スライド資料）](https://bit.ly/3UbUZpL) 
+※Looker Studioによる可視化例も含まれています。
+
+---
+
 ## 使用技術
 
 | 項目       | 技術・サービス                           |
@@ -124,14 +133,6 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 | Cloud Logging | 詳細なステップログ  | functions-framework や GCP上で自動出力 |
 
 > 粒度と用途を分離して、運用面での可観測性と調査性を確保。ローカルログ出力は現在は未使用です。
-
----
-
-## 成果物の活用（プレゼン資料）
-
-本プロジェクトの背景・構成・工夫点・可視化結果などをまとめたプレゼン資料を以下に掲載しています。
-
-🔗 [【2025年8月】青木大和ポートフォリオ（スライド資料）](https://bit.ly/3UbUZpL) ※Looker Studioによる可視化例も含まれています。
 
 ---
 
