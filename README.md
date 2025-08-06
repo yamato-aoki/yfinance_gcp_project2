@@ -139,7 +139,7 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 
 - 名前：青木 大和（Yamato Aoki）
 - 志望職種：データエンジニア
-- 得意領域：データ基盤構築 / ETL / 可視化 / GCP活用 / 再現性ある設計
+- 注力している領域：データ基盤構築 / ETL / GCP活用 / 再現性ある設計
 
 ---
 
