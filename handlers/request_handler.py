@@ -1,4 +1,4 @@
-"""リクエストの mode に応じて各ETL処理を呼び分けます。"""
+"""リクエストの mode に応じて各ETL処理を呼び分ける。"""
 
 # handlers/request_handler.py
 
@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 def handle_request(mode: str, **kwargs: Any) -> None:
     """
-    リクエストされたモードに応じて処理を分岐します。
+    リクエストされたモードに応じて処理を分岐する。
 
     パラメータ:
         mode (str): 実行モード（"etl" / "etl_range" / "init_master"）

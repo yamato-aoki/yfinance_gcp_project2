@@ -1,6 +1,6 @@
 """
-BigQuery上の tickers テーブルから銘柄ID（ticker_id）を取得します。
-※現時点では is_index などのフィルタはかけず、全件取得します。
+BigQuery上の tickers テーブルから銘柄ID（ticker_id）を取得。
+※現時点では is_index などのフィルタはかけず、全件取得する。
 """
 
 # utils/init/get_tickers.py

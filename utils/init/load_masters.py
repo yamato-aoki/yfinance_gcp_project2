@@ -1,6 +1,6 @@
 """
-tickers, sectors, currencies などマスタデータを初期ロードします。
-GCS上のNDJSONファイルをBigQueryに読み込み、各マスタテーブルを再作成します。
+tickers, sectors, currencies などマスタデータを初期ロード。
+GCS上のNDJSONファイルをBigQueryに読み込み、各マスタテーブルを再作成する。
 """
 
 # utils/init/load_masters.py
