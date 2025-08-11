@@ -8,12 +8,20 @@ Cloud Functions / BigQuery / Cloud Storage / Scheduler を用いた自動ETL構�
 
 ---
 
+### 構成図（イメージ）
+
+<img src="docs/system_architecture_flow.png" alt="構成図" width="600" />
+
+
+> ※本構成図は、yfinanceから取得したデータをGCP上で処理・保存し、Slack通知や可視化などの運用に活用する流れを示しています。
+
 ## プロジェクト全体の解説資料（スライド形式）
 
 本プロジェクトの全体像・構成・可視化例をまとめたプレゼン資料です。
 
 🔗 [【2025年8月】青木大和ポートフォリオ（スライド資料）](https://drive.google.com/file/d/1L99E64LngO7qMrIsZxDR7_KjWF_rY-bi/view) 
 ※Looker Studioによる可視化例も含まれています。
+
 
 ---
 
