@@ -154,20 +154,13 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 
 このプロジェクトで実施している「分析用データへの変換（整形）」部分 [`transform_to_analytics.py`](https://github.com/yamato-aoki/yfinance_gcp_project2/blob/main/utils/etl/transform_to_analytics.py) を、今後は別プロジェクトに分けて管理する予定です。  
 
+- DataformプロジェクトURL: [`yfinance-dataform`](https://github.com/yamato-aoki/yfinance-dataform)  
+
 理由は、**ETLと分析用整形処理を分けることで、管理や改修がしやすくなるため** です。  
 変換処理には Google Cloud の **Dataform** を利用し、SQLのバージョン管理やテーブル作成を自動化します。  
 
-- Dataform版の変換処理: [`yfinance-dataform`](https://github.com/yamato-aoki/yfinance-dataform)  
-
-これにより、ETL基盤と分析基盤の役割を明確に分け、保守性と拡張性を高めています。  
+これにより、ETL基盤と分析基盤の役割を明確に分け、保守性と拡張性を高めます。  
 **実行トリガーについては、Cloud Functions 経由での Dataform API 呼び出しや、必要に応じて Cloud Dataflow の活用を検討中です。**
-
----
-
-- 目的：ETL基盤と分析整形の責務分離
-- 主な機能：集計テーブル作成、変換処理のバージョン管理
-- 備考：別リポジトリはポートフォリオ面接時に共有可能
-
 
 ---
 
