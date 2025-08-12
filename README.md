@@ -150,17 +150,22 @@ curl -X POST http://localhost:8080 -H "Content-Type: application/json" -d '{"mod
 
 ---
 
-## Dataform プロジェクトについて
+## 分析基盤の Dataform への移行について
 
-このプロジェクトで実施している「分析用データへの変換（整形）」部分 [`transform_to_analytics.py`](https://github.com/yamato-aoki/yfinance_gcp_project2/blob/main/utils/etl/transform_to_analytics.py) を、今後は別プロジェクトに分けて管理する予定です。  
+本プロジェクトで行っている **「分析用データへの変換（整形）」処理**  [`transform_to_analytics.py`](https://github.com/yamato-aoki/yfinance_gcp_project2/blob/main/utils/etl/transform_to_analytics.py) は、  
+今後、別リポジトリに切り出して **Google Cloud Dataform** による管理へ移行します。
 
-- DataformプロジェクトURL: [`yfinance-dataform`](https://github.com/yamato-aoki/yfinance-dataform)  
+移行先リポジトリ: [**yfinance-dataform**](https://github.com/yamato-aoki/yfinance-dataform)
 
-理由は、**ETLと分析用整形処理を分けることで、管理や改修がしやすくなるため** です。  
-変換処理には Google Cloud の **Dataform** を利用し、SQLのバージョン管理やテーブル作成を自動化します。  
+### 移行の目的
+- **役割分離**：ETL基盤と分析基盤を分け、責務を明確化
+- **保守性向上**：SQLのバージョン管理とテーブル生成を自動化
+- **拡張性確保**：新しい分析要件やテーブル追加に柔軟に対応可能
 
-これにより、ETL基盤と分析基盤の役割を明確に分け、保守性と拡張性を高めます。  
-**実行トリガーについては、Cloud Functions 経由での Dataform API 呼び出しや、必要に応じて Cloud Dataflow の活用を検討中です。**
+### 実行方法（予定）
+- Cloud Functions から Dataform API を呼び出して実行
+- 必要に応じて Cloud Dataflow を活用した処理も検討中
+
 
 ---
 
